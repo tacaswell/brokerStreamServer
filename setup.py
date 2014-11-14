@@ -10,6 +10,6 @@ setup(
     packages=['broker',
               'broker.server',
               'broker.client',
-              'broker.commands',
+#              'broker.commands',
               ],
     )
