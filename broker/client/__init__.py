@@ -94,7 +94,7 @@ def write_json_to_socket(data, host, port, json_encoder=None):
     """
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect((host, port))
-    dstr = json.dumps(data, cls=NumpyEncoder)
+    dstr = json.dumps(data) #, cls=json_encoder)
     s.sendall(dstr)
     s.close()
     pass
