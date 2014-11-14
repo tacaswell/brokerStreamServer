@@ -1,15 +1,16 @@
 __author__ = 'arkilic'
 
 
-from .. import config as cfg
+from broker import config as cfg
 import numpy as np
 
-from . import read_json_from_socket
+from broker.client import read_json_from_socket
 
 
 def rough_center(img, axis):
     ret = np.mean(np.argmax(img, axis=axis))
     return ret
+
 
 def main():
     while True:
@@ -21,3 +22,7 @@ def main():
                 print("center: ({}, {})".format(
                     rough_center(img, axis=0),
                     rough_center(img, axis=1)))
+
+
+if __name__ == '__main__':
+    main()

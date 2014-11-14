@@ -3,10 +3,10 @@ from __future__ import print_function, division
 import numpy as np
 import time
 
-from .. import config as cfg
+from broker import config as cfg
 from skxray import core
 
-from . import write_json_to_socket
+from broker.client import write_json_to_socket
 
 
 def _scale_func(scale, count):
@@ -15,6 +15,7 @@ def _scale_func(scale, count):
     if not count % 25:
         return scale + .5
     return None
+
 
 def main():
     _im_shape = (150, 150)
@@ -61,3 +62,7 @@ def main():
 
         # sleep for a bit to not clobber everything else
         time.sleep(.5)
+
+
+if __name__ == '__main__':
+    main()
